@@ -7,7 +7,7 @@ export default class persist {
   }
 
   static async willGetAccessToken() {
-    return cookies.get(persist.ACCESS_TOKEN_KEY);
+    return JSON.parse(cookies.get(persist.ACCESS_TOKEN_KEY));
   }
 
   static async willSetAccessToken(value: string) {
